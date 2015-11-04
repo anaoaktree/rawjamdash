@@ -38,12 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'faker_factory',
     'hello'
 )
-
-FAKER_LOCALE = None     # settings.LANGUAGE_CODE is loaded
-FAKER_PROVIDERS = None  # faker.DEFAULT_PROVIDERS is loaded (all)
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
