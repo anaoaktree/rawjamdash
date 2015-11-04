@@ -30,8 +30,7 @@ function getBigTable(){
         if (xhr.readyState == 4) {
         htmldoc = $($.parseHTML(xhr.responseText));
         document.getElementById("bigTable").innerHTML = htmldoc.find("#bigTable").html(); 
-        var spinner= document.getElementById('spinner');
-        spinner.style.visibility = "hidden";
+        $('#dataTables-example').dataTable()
       }
     }
     xhr.open("GET", "/bigTable/", true);
