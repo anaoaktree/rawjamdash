@@ -8,6 +8,8 @@
 
 3. Prepare the template for the widgets http://www.bootstrapzero.com/bootstrap-template/binary
 
-4. Django templating system.
+4. Django templating system for pages 
 
-5. Tables : using jquery datatables plugin
+5. Tables
+	- using jquery datatables plugin
+	- Dummy data with django-faker
