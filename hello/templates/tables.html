@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-
+{% block addcss %}
+ <!-- TABLE STYLES-->
+    <link href="{% static'assets/js/dataTables/dataTables.bootstrap.css' %}" rel="stylesheet" />
+{%endblock%}
 {% block content %}
 
 <div id="page-inner">
@@ -724,4 +727,17 @@
                
     </div>
              <!-- /. PAGE INNER  -->
+{% endblock %}
+
+
+{% block addscripts %} 
+<!-- DATA TABLE SCRIPTS -->
+    <script src="{% static 'assets/js/dataTables/jquery.dataTables.js' %}"></script>
+    <script src="{% static 'assets/js/dataTables/dataTables.bootstrap.js'%}"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>
+
 {% endblock %}
