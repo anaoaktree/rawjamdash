@@ -13,7 +13,7 @@
                                     
                                     <thead>
                                         <tr>
-                                            <th>Rendering engine</th>
+                                            <th>Name</th>
                                             <th>Browser</th>
                                             <th>Platform(s)</th>
                                             <th>Engine version</th>
@@ -23,13 +23,13 @@
                                     <tbody>
                                         {% for user in allUsers %}
                                         <tr class="odd gradeX">
-                                            <td>{{forloop.counter0}}</td>
+                                            <td>{{user.firstName}}</td>
                                             <td>user</td>
                                             <td>Dummy</td>
                                             <td class="center">dum</td>
                                             <td class="center">X</td>
                                         </tr>
-                                    {% endfor %}
+                                        {% endfor %}
 
                                      </tbody>
                                 </table>

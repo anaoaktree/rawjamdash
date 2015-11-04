@@ -27,8 +27,3 @@ def tables(request):
 
 def bigTable(request):
     return render(request, 'bigTable.html', {'todaytime': now, 'allUsers':Person.objects.all()})    
-
-def db(request):
-	greetings = Person.objects.all()
-	return render(request, 'db.html', {'greetings': greetings})
-
