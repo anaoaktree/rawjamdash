@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-import datetime,json
+import datetime,json, random
 
 
 from hello.models import  Person, SubUser
@@ -19,7 +19,10 @@ fake= Factory.create()
 def run():
 	for _ in range(10):
 		p= fake.simple_profile()
+
 		Person(firstName = p["name"]).save()
+		SubUser(name = p["name"], gender= p["sex"], age = random.randint(0,99), when= random.randint(1,4)).save()
+
 
 
 
@@ -41,7 +44,7 @@ def tables(request):
 
 
 def bigTable(request):
-    return render(request, 'bigTable.html', {'todaytime': now, 'allUsers':Person.objects.all()})    
+    return render(request, 'bigTable.html', {'todaytime': now, 'allUsers':SubUser.objects.all()})    
 
 
 def getCountAll(request):
