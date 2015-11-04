@@ -14,7 +14,6 @@
 
 
 (function ($) {
-    "use strict";
     var mainApp = {
 
         main_fun: function () {
@@ -45,11 +44,6 @@
                     $(item).addClass('active-menu');
                 }
             });
-
-            initialization: function () {
-                mainApp.main_fun();
-
-            }
 
         }
     }
