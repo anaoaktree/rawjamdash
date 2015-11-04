@@ -4,7 +4,7 @@ from django.http import HttpResponse
 import datetime,json
 
 
-from hello.models import  Person
+from hello.models import  Person, SubUser
 
 import hello.loadData
 
@@ -19,7 +19,7 @@ fake= Factory.create()
 def run():
 	for _ in range(10):
 		p= fake.simple_profile()
-		Person(firstName = p["name"],userName=p["username"]).save()
+		Person(firstName = p["name"]).save()
 
 
 
@@ -49,8 +49,8 @@ def getCountAll(request):
 
 
 def getCountM(request):
-	return JsonResponse({"count":Person.objects.filter(gender="M").count()})
+	return JsonResponse({"count":SubUser.objects.filter(gender="M").count()})
 
 
 def getCountF(request):
-	return JsonResponse({"count":Person.objects.filter(gender="F").count()})
+	return JsonResponse({"count":SubUser.objects.filter(gender="F").count()})
