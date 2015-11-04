@@ -36,21 +36,23 @@ def index(request):
 	return render(request, 'index.html', {'todaytime': now})
 
 
-# Create your views here.
+# Loads the table pages
 def tables(request):
 	run()
-	return render(request, 'tables.html', {'todaytime': now})
+	return render(request, 'tables.html', {'todaytime': now, 'tabledata': SubUser.objects.filter(gender="M")})
 
 
-
+#Gets assync data to fill in the big table
 def bigTable(request):
     return render(request, 'bigTable.html', {'todaytime': now, 'allUsers':SubUser.objects.all()})    
 
 
+#Gets the total nr of subway users
 def getCountAll(request):
 	return JsonResponse({"count":SubUser.objects.count()})
 
 
+# Gets the 
 def getCountM(request):
 	return JsonResponse({"count":SubUser.objects.filter(gender="M").count()})
 

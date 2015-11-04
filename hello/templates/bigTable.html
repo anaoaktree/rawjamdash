@@ -14,20 +14,18 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
+                                            <th>Age</th>
+                                            <th>Gender</th>
+                                            <th>Last travelled</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {% for user in allUsers %}
                                         <tr class="odd gradeX">
                                             <td>{{user.name}}</td>
-                                            <td>user</td>
-                                            <td>Dummy</td>
-                                            <td class="center">dum</td>
-                                            <td class="center">X</td>
+                                            <td>{{user.age}}</td>
+                                            <td>{{user.gender}}</td>
+                                            <td class="center">{{user.when}} weeks ago</td>
                                         </tr>
                                         {% endfor %}
 
