@@ -17,7 +17,8 @@ dummyjson = ["item1", "item2", "item3"]
 def login(nr):
 	fake= Factory.create()
 	for _ in range(nr):
-		Person(first_name = fake.name()).save()
+		dummyjson.append(fake.name())
+		#Person(first_name = fake.name()).save()
 
 
 
