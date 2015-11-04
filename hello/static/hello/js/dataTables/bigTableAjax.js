@@ -30,7 +30,7 @@ function getBigTable(){
 
       }
   }
-  xhr.send()
+  xhr.send(null)
 }
 
   $(document).ready(function () {
