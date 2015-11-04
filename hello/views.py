@@ -6,6 +6,10 @@ import datetime,json
 
 from hello.models import  Person
 
+import hello.loadData
+
+
+
 
 
 from faker import Factory
@@ -16,11 +20,13 @@ now = datetime.datetime.now()
 
 # Create your views here.
 def index(request):
+	Person.objects.all().delete()
     return render(request, 'index.html', {'todaytime': now})
 
 
 # Create your views here.
 def tables(request):
+	loadData.run()
     return render(request, 'tables.html', {'todaytime': now})
 
 
