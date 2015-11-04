@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block addcss %}
  <!-- TABLE STYLES-->
-    <link href="{% static 'assets/js/dataTables/dataTables.bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'hello/js/dataTables/dataTables.bootstrap.css' %}" rel="stylesheet" />
 {% endblock %}
 
 {% block content %}
@@ -733,8 +733,8 @@
 
 {% block addscripts %} 
 <!-- DATA TABLE SCRIPTS -->
-    <script src="{% static 'assets/js/dataTables/jquery.dataTables.js' %}"></script>
-    <script src="{% static 'assets/js/dataTables/dataTables.bootstrap.js'%}"></script>
+    <script src="{% static 'hello/js/dataTables/jquery.dataTables.js' %}"></script>
+    <script src="{% static 'hello/js/dataTables/dataTables.bootstrap.js'%}"></script>
         <script>
             $(document).ready(function () {
                 $('#dataTables-example').dataTable();
