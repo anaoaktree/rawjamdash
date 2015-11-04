@@ -18,7 +18,16 @@ if (request == null)
 return request;
 };
 
- xhr = createRequest();
+ $(document).ready(function () {
+    var counter= {
+        male: 0,
+        female:0,
+        age1:0,
+        age2:0,
+        age3:0
+    };
+
+     xhr = createRequest();
       xhr.onreadystatechange = function(e) {
         if (xhr.readyState == 4) {
         resp = xhr.responseText
@@ -29,16 +38,9 @@ return request;
       }
     }
     xhr.open("GET", "/getCounter/", true);
-    xhr.send()
+    xhr.send();
 
- $(document).ready(function () {
-    var counter= {
-        male: 0,
-        female:0,
-        age1:0,
-        age2:0,
-        age3:0
-    };
+
       var agechart = c3.generate({
         bindto: '#ageChart',
         data: {
@@ -67,3 +69,5 @@ return request;
         type : 'pie',
     }
 });
+
+}
