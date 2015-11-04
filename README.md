@@ -13,4 +13,11 @@
 5. Tables
 	- using jquery datatables plugin
 	- Dummy data with django-faker
-	- Ajax request for big amounts of data (used sleep function)
+	- Ajax request for big amounts of data
+	- Generated Django models
+
+6. Charts
+	- JS library C3
+	- Got data analysis from Django models using filters
+
+	
