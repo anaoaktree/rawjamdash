@@ -40,7 +40,7 @@
 
             $('.menu-item').each(function(index, item) {
 
-                if(href.indexOf(item.props('href')) != -1) {
+                if(href.indexOf($(item).prop('href')) != -1) {
                     $(item).addClass('active-menu');
                 }
             });
