@@ -25,6 +25,7 @@ def login(nr):
 
 
 def bigTable(request):
+    allUsers = [fake.name() for _ in range(500)]
     return render(request, 'bigTable.html', {'todaytime': now, 'allUsers':allUsers})
 
 # Create your views here.
@@ -35,7 +36,6 @@ def index(request):
 
 # Create your views here.
 def tables(request):
-    allUsers = [fake.name() for _ in range(500)]
     return render(request, 'tables.html', {'todaytime': now})
 
 def db(request):
