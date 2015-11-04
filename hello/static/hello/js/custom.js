@@ -40,6 +40,7 @@
         }
 
     }
+}
     // Initializing ///
 
     $(document).ready(function () {
