@@ -13,3 +13,4 @@ class SubUser(models.Model):
 	gender = models.CharField(max_length=1, choices=GEN)
 	age = models.IntegerField()
 	when = models.IntegerField()
+
