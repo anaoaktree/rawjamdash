@@ -15,6 +15,11 @@ dummyjson = ["Admin"]
 fake= Factory.create()
 
 
+for _ in range(10):
+	Person(first_name = fake.name()).save()
+greetings = Person.objects.all()
+
+
 now = datetime.datetime.now()
 
 def login(nr):
@@ -39,9 +44,6 @@ def tables(request):
     return render(request, 'tables.html', {'todaytime': now})
 
 def db(request):
-	fake= Factory.create()
-	for _ in range(10):
-		Person(first_name = fake.name()).save()
-	greetings = Person.objects.all()
+
 	return render(request, 'db.html', {'greetings': greetings})
 
