@@ -70,10 +70,16 @@ font-size: 16px;"> Last access {{ todaytime }} </div>
             
         </nav>  
 
+  <div id="page-wrapper" >
+
+{% block content %}{% endblock %}
+
 
   </div>
 
-{% block content %}{% endblock %}
+
+  </div>
+
 
 
   <script src="{% static 'hello/js/jquery-1.10.2.js' %}"></script>
