@@ -44,7 +44,7 @@
                                         <tr>
                                             <td>{{user.name}}</td>
                                             <td>{{user.gender}}</td>
-                                            <td>{{user.when}}</td>
+                                            <td>{{user.age}}</td>
                                         </tr>
                                         {%endfor%}
                                     </tbody>
@@ -58,7 +58,7 @@
                     <!--    Bordered Table  -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Bordered Table
+                            Over 60
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -66,20 +66,17 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>When</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       {% for data in tabledata %}
+                                       {% for user in over60 %}
                                         <tr>
-                                            <td>{{forloop.counter0}}</td>
-                                            <td>{{data}}</td>
-                                            <td>dummy</td>
-                                            <td>dummy</td>
-                                            <td>100090</td>
+                                            <td>{{user.name}}</td>
+                                            <td>{{user.gender}}</td>
+                                            <td>{{user.when}}</td>
                                         </tr>
                                         {%endfor%}
                                     </tbody>
