@@ -28,8 +28,8 @@ function getBigTable(){
       xhr = createRequest();
       xhr.onreadystatechange = function(e) {
         if (xhr.readyState == 4) {
-        html = $.parseHTML(xhr.responseText);
-        document.getElementById("bigTable").innerHTML = html.find("#bigTable").html(); 
+        htmldoc = $($.parseHTML(xhr.responseText));
+        document.getElementById("bigTable").innerHTML = htmldoc.find("#bigTable").html(); 
         var spinner= document.getElementById('spinner');
         spinner.style.visibility = "hidden";
       }
