@@ -24,6 +24,22 @@
         type : 'pie',
     }
 });
+
+      var whenchart = c3.generate({
+    bindto: '#whenChart',
+    data: {
+        // iris data from R
+        columns: [
+            ['last week', 30],
+            ['2 weeks ago', 172],
+            ['3 weeks ago', 99],
+            ['a month ago', 150],
+
+
+        ],
+        type : 'pie',
+    }
+});
     var genderchart = c3.generate({
     bindto: '#genderChart',
     data: {
