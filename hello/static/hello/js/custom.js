@@ -38,7 +38,7 @@
              */
             var href = window.location.href;
 
-            $('.menu-item').each(function(item) {
+            $('.menu-item').each(function(index, item) {
 
                 if(href.indexOf(item.props('href')) != -1) {
                     $(item).addClass('active-menu');
