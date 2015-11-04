@@ -35,6 +35,5 @@ function getBigTable(){
 }
 
   $(document).ready(function () {
-    alert("HELLO")
         getBigTable();
     });

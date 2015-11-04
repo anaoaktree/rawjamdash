@@ -25,7 +25,7 @@ def login(nr):
 
 
 def bigTable(request):
-    return render(request, 'tables.html', {'todaytime': now, 'allUsers':allUsers})
+    return render(request, 'bigTable.html', {'todaytime': now, 'allUsers':allUsers})
 
 # Create your views here.
 def index(request):
