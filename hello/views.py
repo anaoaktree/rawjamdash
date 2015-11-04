@@ -24,7 +24,8 @@ def login(nr):
 # Create your views here.
 def index(request):
     now = datetime.datetime.now()
-    return render(request, 'index.html', {'todaytime': now, 'tabledata':login(10)})
+    login(20)
+    return render(request, 'index.html', {'todaytime': now, 'tabledata':Person.objects.all()})
 
 
 # Create your views here.
