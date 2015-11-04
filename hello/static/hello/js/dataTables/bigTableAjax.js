@@ -31,8 +31,10 @@ function getBigTable(){
 
       }
   }
+  xhr.send()
 }
 
   $(document).ready(function () {
+    alert("HELLO")
         getBigTable();
     });
