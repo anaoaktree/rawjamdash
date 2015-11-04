@@ -8,8 +8,8 @@ class Greeting(models.Model):
 
 class Person(models.Model):
 	first_name = models.CharField(max_length=30)
-	last_name = models.CharField(max_length=30) #release_date = models.DateField()
-	age = models.IntegerField()
-	bio = models.CharField(max_length=30)
+	#last_name = models.CharField(max_length=30) #release_date = models.DateField()
+	#age = models.IntegerField()
+	#bio = models.CharField(max_length=30)
 
 
