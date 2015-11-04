@@ -39,7 +39,7 @@ def index(request):
 # Loads the table pages
 def tables(request):
 	run()
-	return render(request, 'tables.html', {'todaytime': now, 'tabledata': SubUser.objects.filter(gender="M")})
+	return render(request, 'tables.html', {'todaytime': now, 'tabledata': SubUser.objects.filter(gender="M"),'lastweek': SubUser.objects.filter(when=1)})
 
 
 #Gets assync data to fill in the big table

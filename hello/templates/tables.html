@@ -77,7 +77,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       {% for data in tabledata %}
+                                       {% for data in lastweek %}
                                         <tr>
                                             <td>{{forloop.counter0}}</td>
                                             <td>{{user.name}}</td>
@@ -114,11 +114,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      {% for data in tabledata %}
+                                      {% for data in lastweek %}
                                         <tr>
-                                            <td>{{forloop.counter0}}</td>
-                                            <td>{{data}}</td>
-                                            <td>dummy</td>
+                                            <td>{{user.name}}</td>
+                                            <td>{{user.gender}}</td>
+                                            <td>{{user.when}}</td>
                                             <td>dummy</td>
                                             <td>100090</td>
                                         </tr>
