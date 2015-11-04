@@ -1,22 +1,3 @@
- function createRequest() {
-  try {
-    request = new XMLHttpRequest();
-  } catch (trymicrosoft) {
-    try {
-      request = new ActiveXObject ("Msxml2.XMLHTTP");
-  } catch (othermicrosoft) {
-    try {
-      request = new ActiveXObject("Microsoft.XMLHTTP");
-    } catch (failed) {
-      request = null;
-    }
-  }
-}
-
-if (request == null)
-  alert("Error creating request object!");
-return request;
-};
 
  $(document).ready(function () {
     var counter= {
@@ -26,21 +7,6 @@ return request;
         age2:0,
         age3:0
     };
-
-     xhr = createRequest();
-      xhr.onreadystatechange = function(e) {
-        if (xhr.readyState == 4) {
-        resp = xhr.responseText
-        counter.male = resp.male
-        counter.female = resp.female
-
-
-      }
-    }
-    xhr.open("GET", "/getCounter/", true);
-    xhr.send();
-
-
       var agechart = c3.generate({
         bindto: '#ageChart',
         data: {
@@ -70,4 +36,4 @@ return request;
     }
 });
 
-}
+});
