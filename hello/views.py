@@ -15,6 +15,7 @@ dummyjson = ["Admin"]
 fake= Factory.create()
 
 
+now = datetime.datetime.now()
 
 def login(nr):
 	fake= Factory.create()
@@ -24,19 +25,18 @@ def login(nr):
 
 
 def bigTable():
-	
+    return render(request, 'tables.html', {'todaytime': now, 'allUsers':allUsers})
+
 # Create your views here.
 def index(request):
-    now = datetime.datetime.now()
     login(20)
     return render(request, 'index.html', {'todaytime': now, 'tabledata':dummyjson})
 
 
 # Create your views here.
 def tables(request):
-    now = datetime.datetime.now()
     allUsers = [fake.name() for _ in range(500)]
-    return render(request, 'tables.html', {'todaytime': now, 'allUsers':allUsers})
+    return render(request, 'tables.html', {'todaytime': now})
 
 def db(request):
 	fake= Factory.create()
