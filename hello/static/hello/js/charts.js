@@ -38,21 +38,8 @@ return request;
         age1:0,
         age2:0,
         age3:0
-    }
-    var genderchart = c3.generate({
-    bindto: '#genderChart',
-    data: {
-        // iris data from R
-        columns: [
-            ['men', 30],
-            ['women', 120],
-        ],
-        type : 'pie',
-        onclick: function (d, i) { console.log("onclick", d, i); },
-        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
-    }
-      var genderchart = c3.generate({
+    };
+      var agechart = c3.generate({
         bindto: '#ageChart',
         data: {
         // iris data from R
