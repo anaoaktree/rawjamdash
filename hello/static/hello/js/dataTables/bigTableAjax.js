@@ -21,19 +21,17 @@ return request;
 
 function getBigTable(){
   //ajax request to get conditions
-  xhr = createRequest();
-  xhr.open("GET", "/bigTable/", true);
-  xhr.onreadystatechange = function(e) {
-  if (xhr.readyState == 4) {
-        var spinner= document.getElementById('spinner');
-        spinner.style.visibility = "hidden";
 
-      }
-  }
-  xhr.send(null)
 }
 
   $(document).ready(function () {
-    alert("hello");
-        getBigTable();
+      xhr = createRequest();
+      xhr.open("GET", "/bigTable/", true);
+      xhr.onreadystatechange = function(e) {
+        if (xhr.readyState == 4) {
+        var spinner= document.getElementById('spinner');
+        spinner.style.visibility = "hidden";
+      }
+  }
+  xhr.send(null)
     });
