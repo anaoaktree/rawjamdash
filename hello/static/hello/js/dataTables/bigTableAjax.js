@@ -27,11 +27,12 @@ function getBigTable(){
   $(document).ready(function () {
       xhr = createRequest();
       xhr.open("GET", "/bigTable/", true);
+      xhr.send()
+
       xhr.onreadystatechange = function(e) {
         if (xhr.readyState == 4) {
         var spinner= document.getElementById('spinner');
         spinner.style.visibility = "hidden";
       }
   }
-  xhr.send(null)
     });
