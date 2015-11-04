@@ -26,13 +26,13 @@ function getBigTable(){
 
   $(document).ready(function () {
       xhr = createRequest();
+      xhr.open("GET", "/bigTable/", true);
+      xhr.send()
       xhr.onreadystatechange = function(e) {
         if (xhr.readyState == 4) {
-        alert(xhr.responseText)
         var spinner= document.getElementById('spinner');
         spinner.style.visibility = "hidden";
       }
     }
-    xhr.open("GET", "/bigTable/", true);
-    xhr.send()
+    
     });
