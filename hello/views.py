@@ -42,7 +42,7 @@ def tables(request):
 
 def db(request):
 	for _ in range(10):
-		Person(first_name = fake.name()).save()
+		Person(firstName = fake.name()).save()
 	greetings = Person.objects.all()
 	return render(request, 'db.html', {'greetings': greetings})
 
