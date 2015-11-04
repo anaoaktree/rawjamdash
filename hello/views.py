@@ -22,7 +22,7 @@ now = datetime.datetime.now()
 def login(nr):
 	fake= Factory.create()
 	for _ in range(nr):
-		print fake.simple_profile().username
+		print fake.simple_profile()["username"]
 		dummyjson.append(fake.name())
 		#Person(first_name = fake.name()).save()
 
