@@ -24,7 +24,7 @@ def login(nr):
 		#Person(first_name = fake.name()).save()
 
 
-def bigTable():
+def bigTable(request):
     return render(request, 'tables.html', {'todaytime': now, 'allUsers':allUsers})
 
 # Create your views here.
