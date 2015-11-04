@@ -10,6 +10,9 @@ def index(request):
 
 
 def db(request):
+	"""
+	Returns all the json data
+	"""
 
     greeting = Greeting()
     greeting.save()
