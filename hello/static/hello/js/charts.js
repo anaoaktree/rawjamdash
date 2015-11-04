@@ -1,36 +1,82 @@
+ function createRequest() {
+  try {
+    request = new XMLHttpRequest();
+  } catch (trymicrosoft) {
+    try {
+      request = new ActiveXObject ("Msxml2.XMLHTTP");
+  } catch (othermicrosoft) {
+    try {
+      request = new ActiveXObject("Microsoft.XMLHTTP");
+    } catch (failed) {
+      request = null;
+    }
+  }
+}
+
+if (request == null)
+  alert("Error creating request object!");
+return request;
+};
+
+ xhr = createRequest();
+      xhr.onreadystatechange = function(e) {
+        if (xhr.readyState == 4) {
+        resp = xhr.responseText
+        counter.male = resp.male
+        counter.female = resp.female
+
+
+      }
+    }
+    xhr.open("GET", "/getCounter/", true);
+    xhr.send()
+
  $(document).ready(function () {
-    var chart = c3.generate({
-    bindto: '#chart',
+    var counter= {
+        male: 0,
+        female:0,
+        age1:0,
+        age2:0,
+        age3:0
+    }
+    var genderchart = c3.generate({
+    bindto: '#genderChart',
     data: {
         // iris data from R
         columns: [
-            ['data1', 30],
-            ['data2', 120],
+            ['men', 30],
+            ['women', 120],
         ],
         type : 'pie',
         onclick: function (d, i) { console.log("onclick", d, i); },
         onmouseover: function (d, i) { console.log("onmouseover", d, i); },
         onmouseout: function (d, i) { console.log("onmouseout", d, i); }
     }
-});
-
-setTimeout(function () {
-    chart.load({
+      var genderchart = c3.generate({
+        bindto: '#ageChart',
+        data: {
+        // iris data from R
         columns: [
-            ["setosa", 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.2, 0.1, 0.1, 0.2, 0.4, 0.4, 0.3, 0.3, 0.3, 0.2, 0.4, 0.2, 0.5, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.2, 0.4, 0.1, 0.2, 0.2, 0.2, 0.2, 0.1, 0.2, 0.2, 0.3, 0.3, 0.2, 0.6, 0.4, 0.3, 0.2, 0.2, 0.2, 0.2],
-            ["versicolor", 1.4, 1.5, 1.5, 1.3, 1.5, 1.3, 1.6, 1.0, 1.3, 1.4, 1.0, 1.5, 1.0, 1.4, 1.3, 1.4, 1.5, 1.0, 1.5, 1.1, 1.8, 1.3, 1.5, 1.2, 1.3, 1.4, 1.4, 1.7, 1.5, 1.0, 1.1, 1.0, 1.2, 1.6, 1.5, 1.6, 1.5, 1.3, 1.3, 1.3, 1.2, 1.4, 1.2, 1.0, 1.3, 1.2, 1.3, 1.3, 1.1, 1.3],
-            ["virginica", 2.5, 1.9, 2.1, 1.8, 2.2, 2.1, 1.7, 1.8, 1.8, 2.5, 2.0, 1.9, 2.1, 2.0, 2.4, 2.3, 1.8, 2.2, 2.3, 1.5, 2.3, 2.0, 2.0, 1.8, 2.1, 1.8, 1.8, 1.8, 2.1, 1.6, 1.9, 2.0, 2.2, 1.5, 1.4, 2.3, 2.4, 1.8, 1.8, 2.1, 2.4, 2.3, 1.9, 2.3, 2.5, 2.3, 1.9, 2.0, 2.3, 1.8],
-        ]
-    });
-}, 1500);
-
-setTimeout(function () {
-    chart.unload({
-        ids: 'data1'
-    });
-    chart.unload({
-        ids: 'data2'
-    });
-}, 2500);
-
+            ['< 10', 30],
+            ['10-16', 44],
+            ['17-23', 183],
+            ['24-30', 120],
+            ['31-37', 208],
+            ['38-50', 74],
+            ['51-59', 86],
+            ['>60', 100],
+        ],
+        type : 'pie',
+    }
+});
+    var genderchart = c3.generate({
+    bindto: '#genderChart',
+    data: {
+        // iris data from R
+        columns: [
+            ['men', 30],
+            ['women', 120],
+        ],
+        type : 'pie',
+    }
 });

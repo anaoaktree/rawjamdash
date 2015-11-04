@@ -47,10 +47,16 @@ def bigTable(request):
     return render(request, 'bigTable.html', {'todaytime': now, 'allUsers':SubUser.objects.all()})    
 
 
+
+def getCounter(request):
+	male = SubUser.objects.filter(gender="M").count()
+	female = SubUser.objects.filter(gender="F").count()
+	return JsonResponse({"male":male, "female":female})
+
+
 #Gets the total nr of subway users
 def getCountAll(request):
 	return JsonResponse({"count":SubUser.objects.count()})
-
 
 # Gets the 
 def getCountM(request):

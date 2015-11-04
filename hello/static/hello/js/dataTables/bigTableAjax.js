@@ -19,11 +19,6 @@ return request;
 };
 
 
-function getBigTable(){
-  //ajax request to get conditions
-
-}
-
   $(document).ready(function () {
       xhr = createRequest();
       xhr.onreadystatechange = function(e) {
