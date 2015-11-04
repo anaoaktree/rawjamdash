@@ -33,7 +33,6 @@ function getBigTable(){
   }
 }
 
-window.onload = function(){
-  //checked jsperf.com for perfomance
- getBigTable()
-};
+  $(document).ready(function () {
+        getBigTable();
+    });
