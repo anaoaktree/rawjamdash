@@ -48,7 +48,7 @@ def bigTable(request):
 
 
 def getCountAll(request):
-	return JsonResponse({"count":Person.objects.count()})
+	return JsonResponse({"count":SubUser.objects.count()})
 
 
 def getCountM(request):
