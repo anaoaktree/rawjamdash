@@ -40,7 +40,7 @@ def tables(request):
 
 def db(request):
 	fake= Factory.create()
-	for _ in range(nr):
+	for _ in range(10):
 		Person(first_name = fake.name()).save()
 	greetings = Person.objects.all()
 	return render(request, 'db.html', {'greetings': greetings})
