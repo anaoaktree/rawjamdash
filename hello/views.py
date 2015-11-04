@@ -11,35 +11,22 @@ from hello.models import  Person
 from faker import Factory
 
 
-dummyjson = ["Admin"]
-fake= Factory.create()
-
-
-
 
 now = datetime.datetime.now()
 
-def login(nr):
-	fake= Factory.create()
-	for _ in range(nr):
-		print fake.simple_profile()["username"]
-		dummyjson.append(fake.name())
-		#Person(first_name = fake.name()).save()
-
-
-def bigTable(request):
-    allUsers = [fake.name() for _ in range(500)]
-    return render(request, 'bigTable.html', {'todaytime': now, 'allUsers':allUsers})
-
 # Create your views here.
 def index(request):
-    login(20)
-    return render(request, 'index.html', {'todaytime': now, 'tabledata':dummyjson})
+    return render(request, 'index.html', {'todaytime': now})
 
 
 # Create your views here.
 def tables(request):
     return render(request, 'tables.html', {'todaytime': now})
+
+
+
+def bigTable(request):
+    return render(request, 'bigTable.html', {'todaytime': now, 'allUsers':Person.objects.all()})    
 
 def db(request):
 	greetings = Person.objects.all()
