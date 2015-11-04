@@ -15,7 +15,7 @@ def index(request):
 # Create your views here.
 def tables(request):
     now = datetime.datetime.now()
-    return render(request, 'table.html', {'todaytime': now})
+    return render(request, 'tables.html', {'todaytime': now})
 
 def db(request):
     greeting = Greeting()
