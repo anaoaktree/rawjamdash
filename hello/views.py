@@ -4,7 +4,7 @@ from django.http import HttpResponse
 import datetime,json
 
 
-from .models import  Person
+from hello.models import  Person
 
 
 

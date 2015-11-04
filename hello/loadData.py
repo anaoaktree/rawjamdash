@@ -1,6 +1,6 @@
 
 
-from .models import Person
+from hello.models import Person
 
 
 
