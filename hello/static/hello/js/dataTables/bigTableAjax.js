@@ -21,7 +21,6 @@ return request;
 
 function getBigTable(){
   //ajax request to get conditions
-  event.preventDefault();
   xhr = createRequest();
   xhr.open("GET", "/bigTable/", true);
   xhr.onreadystatechange = function(e) {
@@ -35,5 +34,6 @@ function getBigTable(){
 }
 
   $(document).ready(function () {
+    alert("hello");
         getBigTable();
     });
