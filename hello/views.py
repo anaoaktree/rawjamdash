@@ -38,7 +38,6 @@ def db(request):
 	fake= Factory.create()
 	for _ in range(nr):
 		Person(first_name = fake.name()).save()
-    greetings = Person.objects.all()
-
-    return render(request, 'db.html', {'greetings': greetings})
+	greetings = Person.objects.all()
+	return render(request, 'db.html', {'greetings': greetings})
 

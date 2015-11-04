@@ -9,7 +9,6 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'gettingstarted.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-    # url(r'^faker/', include('django_faker.urls')),
     url(r'^$', hello.views.index, name='index'),
     url(r'^tables/', hello.views.tables, name='tables'),
     url(r'^db/', hello.views.db, name='db'),
