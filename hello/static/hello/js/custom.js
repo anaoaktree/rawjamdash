@@ -34,13 +34,23 @@
                 }
             });
 
-        initialization: function () {
-            mainApp.main_fun();
+            /**
+             * Menu items.
+             */
+            $('.menu-item').on('click', function() {
+
+                $('.menu-item').removeClass('active-menu');
+                $(this).addClass('active-menu');
+            });
+
+            initialization: function () {
+                mainApp.main_fun();
+
+            }
 
         }
-
     }
-}
+
     // Initializing ///
 
     $(document).ready(function () {
