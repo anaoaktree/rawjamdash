@@ -1,5 +1,4 @@
 from django.db import models
-from faker import Factory
 
 
 # Create your models here.
