@@ -21,7 +21,7 @@ now = datetime.datetime.now()
 # Create your views here.
 def index(request):
 	Person.objects.all().delete()
-    return render(request, 'index.html', {'todaytime': now})
+	return render(request, 'index.html', {'todaytime': now})
 
 
 # Create your views here.
@@ -36,12 +36,12 @@ def bigTable(request):
 
 
 def getCountAll(request):
-	return JsonResponse({"count":Client.objects.count()})
+	return JsonResponse({"count":Person.objects.count()})
 
 
 def getCountM(request):
-	return JsonResponse({"count":Client.objects.filter(gender="M").count()})
+	return JsonResponse({"count":Person.objects.filter(gender="M").count()})
 
 
 def getCountF(request):
-	return JsonResponse({"count":Client.objects.filter(gender="F").count()})
+	return JsonResponse({"count":Person.objects.filter(gender="F").count()})
