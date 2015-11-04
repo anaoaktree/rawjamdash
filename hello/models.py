@@ -2,9 +2,6 @@ from django.db import models
 
 
 # Create your models here.
-class Greeting(models.Model):
-    when = models.CharField()
-
 
 class Person(models.Model):
 	firstName = models.CharField(max_length=30)
