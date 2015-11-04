@@ -23,7 +23,8 @@ def login(nr):
 		#Person(first_name = fake.name()).save()
 
 
-
+def bigTable():
+	
 # Create your views here.
 def index(request):
     now = datetime.datetime.now()
