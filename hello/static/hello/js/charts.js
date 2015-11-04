@@ -1,4 +1,5 @@
-var chart = c3.generate({
+ $(document).ready(function () {
+    var chart = c3.generate({
     bindto: '#chart',
     data: {
         // iris data from R
@@ -31,3 +32,5 @@ setTimeout(function () {
         ids: 'data2'
     });
 }, 2500);
+
+});
