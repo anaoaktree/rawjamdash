@@ -11,7 +11,9 @@ from .models import Greeting, Person
 from faker import Factory
 
 
-dummyjson = ["item1", "item2", "item3"]
+dummyjson = ["Admin"]
+fake= Factory.create()
+
 
 
 def login(nr):
@@ -32,7 +34,8 @@ def index(request):
 # Create your views here.
 def tables(request):
     now = datetime.datetime.now()
-    return render(request, 'tables.html', {'todaytime': now})
+    allUsers[fake.name() for _ in range(500)]
+    return render(request, 'tables.html', {'todaytime': now, 'allUsers':allUsers})
 
 def db(request):
 	fake= Factory.create()
