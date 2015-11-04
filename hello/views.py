@@ -26,7 +26,7 @@ def login(nr):
 def index(request):
     now = datetime.datetime.now()
     login(20)
-    return render(request, 'index.html', {'todaytime': now, 'tabledata':Person.objects.all()})
+    return render(request, 'index.html', {'todaytime': now, 'tabledata':dummyjson})
 
 
 # Create your views here.
@@ -35,10 +35,10 @@ def tables(request):
     return render(request, 'tables.html', {'todaytime': now})
 
 def db(request):
-    greeting = Greeting()
-    greeting.save()
-
-    greetings = Greeting.objects.all()
+	fake= Factory.create()
+	for _ in range(nr):
+		Person(first_name = fake.name()).save()
+    greetings = Person.objects.all()
 
     return render(request, 'db.html', {'greetings': greetings})
 
