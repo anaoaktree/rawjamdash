@@ -5,7 +5,8 @@
 <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Admin Dashboard</h2>   
+                     <h2>Admin Access - Subway passenger data</h2>
+                     <h5>Welcome back, admin {{admin}}</h5>   
                     </div>
                 </div>              
                  <!-- /. ROW  -->
@@ -18,7 +19,7 @@
                 </span>
                 <div class="text-box" >
                     <p class="main-text">120 New</p>
-                    <p class="text-muted">Messages</p>
+                    <p class="text-muted">Costumer Service Mail</p>
                 </div>
              </div>
          </div>
@@ -28,8 +29,8 @@
                     <i class="fa fa-bars"></i>
                 </span>
                 <div class="text-box" >
-                    <p class="main-text">30 Tasks</p>
-                    <p class="text-muted">Remaining</p>
+                    <p class="main-text">300 More</p>
+                    <p class="text-muted">Site views</p>
                 </div>
              </div>
          </div>
@@ -40,7 +41,7 @@
                 </span>
                 <div class="text-box" >
                     <p class="main-text">240 New</p>
-                    <p class="text-muted">Notifications</p>
+                    <p class="text-muted">Travelling this week</p>
                 </div>
              </div>
          </div>
@@ -50,8 +51,8 @@
                     <i class="fa fa-rocket"></i>
                 </span>
                 <div class="text-box" >
-                    <p class="main-text">3 Orders</p>
-                    <p class="text-muted">Pending</p>
+                    <p class="main-text">3% More</p>
+                    <p class="text-muted">Passengers</p>
                 </div>
              </div>
          </div>
@@ -108,4 +109,8 @@
     </div>
              <!-- /. PAGE INNER  -->
 
+{% endblock %}
+
+{% block addscripts%}
+    <script src="{% static 'hello/js/charts.js' %}" ></script>
 {% endblock %}

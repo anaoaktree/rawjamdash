@@ -21,7 +21,10 @@
             ['51-59', 86],
             ['>60', 100],
         ],
-        type : 'pie',
+        type : 'donut',
+    },
+    donut: {
+        title: "Age distribution"
     }
 });
 
