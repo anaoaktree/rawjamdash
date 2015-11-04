@@ -30,4 +30,12 @@ def bigTable(request):
 
 
 def getCountAll(request):
-	return Client.objects.count()
+	return JsonResponse({"count":Client.objects.count()})
+
+
+def getCountM(request):
+	return JsonResponse({"count":Client.objects.filter(gender="M").count()})
+
+
+def getCountF(request):
+	return JsonResponse({"count":Client.objects.filter(gender="F").count()})
