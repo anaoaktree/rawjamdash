@@ -31,7 +31,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-hover">
+                                <table class="table table-hover" id="timeTable">
                                     <thead>
                                         <tr>
                                             <th>Name</th>
@@ -63,7 +63,7 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive table-hover">
-                                <table class="table">
+                                <table class="table" id="ageTable">
                                     <thead>
                                         <tr>
                                             <th>Name</th>
@@ -102,9 +102,17 @@
 
         <script>
             $(document).ready(function () {
-                $('#dataTables-example').dataTable({
+                $('#allTables').dataTable({
                     "order": [[ 3, "desc" ]]
                 });
+                $('#ageTable').dataTable({
+                    "order": [[ 3, "desc" ]]
+                });
+                $('#timeTable').dataTable({
+                    "order": [[ 3, "desc" ]]
+                });
+
+
             });
     </script>
 
