@@ -4,16 +4,21 @@ from django.http import HttpResponse
 import datetime,json
 
 
-from .models import Greeting
+from .models import Greeting, Person
 
 dummyjson = ["item1", "item2", "item3"]
+
+
+def login(nr):
+	for _ in range(nr):
+		Person(first_name = fake.name()).save()
 
 
 
 # Create your views here.
 def index(request):
     now = datetime.datetime.now()
-    return render(request, 'index.html', {'todaytime': now, 'tabledata':dummyjson})
+    return render(request, 'index.html', {'todaytime': now, 'tabledata':login(10)})
 
 
 # Create your views here.
