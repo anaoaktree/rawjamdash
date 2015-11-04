@@ -10,9 +10,18 @@ import hello.loadData
 
 
 
-
-
 from faker import Factory
+
+
+fake= Factory.create()
+
+
+def run():
+	for _ in range(10):
+		p= fake.simple_profile()
+		Person(firstName = p["name"],userName=p["username"]).save()
+
+
 
 
 
@@ -26,7 +35,7 @@ def index(request):
 
 # Create your views here.
 def tables(request):
-	loadData.run()
+	run()
 	return render(request, 'tables.html', {'todaytime': now})
 
 
