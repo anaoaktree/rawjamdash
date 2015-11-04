@@ -37,10 +37,13 @@
             /**
              * Menu items.
              */
-            $('.menu-item').on('click', function() {
+            var href = window.location.href;
 
-                $('.menu-item').removeClass('active-menu');
-                $(this).addClass('active-menu');
+            $('.menu-item').each(function(item) {
+
+                if(href.indexOf(item.props('href')) != -1) {
+                    $(item).addClass('active-menu');
+                }
             });
 
             initialization: function () {
