@@ -27,7 +27,7 @@ def index(request):
 # Create your views here.
 def tables(request):
 	loadData.run()
-    return render(request, 'tables.html', {'todaytime': now})
+	return render(request, 'tables.html', {'todaytime': now})
 
 
 
