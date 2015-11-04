@@ -34,7 +34,7 @@ def index(request):
 # Create your views here.
 def tables(request):
     now = datetime.datetime.now()
-    allUsers[fake.name() for _ in range(500)]
+    allUsers = [fake.name() for _ in range(500)]
     return render(request, 'tables.html', {'todaytime': now, 'allUsers':allUsers})
 
 def db(request):
