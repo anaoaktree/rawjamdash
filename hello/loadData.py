@@ -13,4 +13,4 @@ fake= Factory.create()
 def run():
 	for _ in range(10):
 		p= fake.simple_profile()
-		Person(firstName = p["name"],userName=p["userName"]).save()
+		Person(firstName = p["name"],userName=p["username"]).save()

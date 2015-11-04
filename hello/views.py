@@ -27,3 +27,7 @@ def tables(request):
 
 def bigTable(request):
     return render(request, 'bigTable.html', {'todaytime': now, 'allUsers':Person.objects.all()})    
+
+
+def getCountAll(request):
+	return Client.objects.count()
