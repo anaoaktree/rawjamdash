@@ -4,7 +4,20 @@ from django.http import HttpResponse
 import datetime,json
 
 
-from .models import Greeting
+from .models import Greeting, Player, Game
+
+from django_faker import Faker
+
+
+# this Populator is only a function thats return a django_faker.populator.Populator instance
+# correctly initialized with a faker.generator.Generator instance, configured as above
+populator = Faker.getPopulator()
+
+from myapp.models import Game, Player
+populator.addEntity(Game,5)
+populator.addEntity(Player,10)
+
+insertedPks = populator.execute()
 
 
 

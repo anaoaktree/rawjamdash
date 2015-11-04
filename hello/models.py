@@ -6,3 +6,11 @@ class Greeting(models.Model):
 
 
 
+
+
+class Game(models.Model):
+	pass
+
+
+class Player(models.Model):
+	pass
