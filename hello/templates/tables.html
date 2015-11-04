@@ -22,105 +22,29 @@
            {% endblock %}
         </div>
         </div>
-
-                <!-- /. ROW  -->
-            <div class="row">
-                <div class="col-md-6">
-                  <!--   Kitchen Sink -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Kitchen Sink
-                        </div>
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                         {% for data in tabledata %}
-                                        <tr>
-                                            <td>{{user.name}}</td>
-                                            <td>kijg</td>
-                                            <td>dummy</td>
-                                            <td>dummy</td>
-                                            <td>100090</td>
-                                        </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                     <!-- End  Kitchen Sink -->
-                </div>
-                <div class="col-md-6">
-                     <!--   Basic Table  -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Basic Table
-                        </div>
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                       {% for data in lastweek %}
-                                        <tr>
-                                            <td>{{forloop.counter0}}</td>
-                                            <td>{{user.name}}</td>
-                                            <td>dummy</td>
-                                            <td>dummy</td>
-                                            <td>100090</td>
-                                        </tr>
-                                        {%endfor%}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                      <!-- End  Basic Table  -->
-                </div>
-            </div>
-                <!-- /. ROW  -->
             <div class="row">
                 <div class="col-md-6">
                       <!--    Striped Rows Table  -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Striped Rows Table
+                            Last Week Passengers
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-striped">
+                                <table class="table table-hover">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>Last Travelled</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      {% for data in lastweek %}
+                                      {% for user in lastweek %}
                                         <tr>
                                             <td>{{user.name}}</td>
                                             <td>{{user.gender}}</td>
                                             <td>{{user.when}}</td>
-                                            <td>dummy</td>
-                                            <td>100090</td>
                                         </tr>
                                         {%endfor%}
                                     </tbody>
@@ -138,7 +62,7 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div class="table-responsive table-bordered">
+                            <div class="table-responsive table-hover">
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -166,44 +90,6 @@
                      <!--  End  Bordered Table  -->
                 </div>
             </div>
-                <!-- /. ROW  -->
-            <div class="row">
-                <div class="col-md-6">
-                     <!--    Hover Rows  -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Hover Rows
-                        </div>
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for data in tabledata %}
-                                        <tr>
-                                            <td>{{forloop.counter0}}</td>
-                                            <td>{{data}}</td>
-                                            <td>dummy</td>
-                                            <td>dummy</td>
-                                            <td>100090</td>
-                                        </tr>
-                                        {%endfor%}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End  Hover Rows  -->
-                </div>
-            </div>
-                <!-- /. ROW  -->
         </div>
                
     </div>
