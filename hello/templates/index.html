@@ -188,7 +188,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      {% for data in tabledata%}
+                                      {% for data in tabledata %}
                                         <tr>
                                             <td>{{forloop.counter0}}</td>
                                             <td>{{data}}</td>
@@ -196,6 +196,7 @@
                                             <td>dummy</td>
                                             <td>100090</td>
                                         </tr>
+                                        {%endfor%}
                                     </tbody>
                                 </table>
                             </div>
