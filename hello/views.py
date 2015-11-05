@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 import datetime,json, random
 from hello.models import SubUser
 
-#from django.contrib.auth.models import User
-
+user = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
+user.save()
 #u = User.objects.get(username='john')
 #u.set_password('new password')
 #u.save()
