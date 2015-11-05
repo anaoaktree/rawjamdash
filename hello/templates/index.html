@@ -1,116 +1,114 @@
-{% extends "base.html" %}
-{% load staticfiles %}
+  {% extends "base.html" %}
+  {% load staticfiles %}
 
-{% block content %}
-<div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
-                     <h2>Admin Access - Subway passenger data</h2>
-                     <h5>Welcome back, admin {{admin}}. How is it going?</h5>   
-                    </div>
-                </div>              
-                 <!-- /. ROW  -->
-                  <hr />
-                <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-6">           
-      <div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-red set-icon">
-                    <i class="fa fa-envelope-o"></i>
-                </span>
-                <div class="text-box" >
-                    <p class="main-text">120 New</p>
-                    <p class="text-muted">Costumer Service Mail</p>
-                </div>
-             </div>
-         </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6">           
-      <div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-green set-icon">
-                    <i class="fa fa-bars"></i>
-                </span>
-                <div class="text-box" >
-                    <p class="main-text">300 More</p>
-                    <p class="text-muted">Site views</p>
-                </div>
-             </div>
-         </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6">           
-      <div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-blue set-icon">
-                    <i class="fa fa-bell-o"></i>
-                </span>
-                <div class="text-box" >
-                    <p class="main-text">240 New</p>
-                    <p class="text-muted">Travelling this week</p>
-                </div>
-             </div>
-         </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6">           
-      <div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-brown set-icon">
-                    <i class="fa fa-rocket"></i>
-                </span>
-                <div class="text-box" >
-                    <p class="main-text">3% More</p>
-                    <p class="text-muted">Passengers</p>
-                </div>
-             </div>
-         </div>
-      </div>
-
-       <div class="row"> 
-                    
-                      
-        <div class="col-sm-12">
-            <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Last month traffic
-                        </div>
-                        <div class="panel-body">
-                            <div id="whenChart"></div>
-
-                        </div>
-                    </div>   
-
-        </div>
-        </div>
-
-                <div class="row"> 
-                    
-                      
-                    <div class="col-md-6 col-sm-12 col-xs-12">                     
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Age group
-                        </div>
-                        <div class="panel-body">
-                            <div id="ageChart"></div>
-
-                        </div>
-                    </div>            
-                </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12">           <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Gender
-                        </div>
-                        <div class="panel-body">
-                            <div id="genderChart"></div>
-
-                        </div>
-                    </div>                  
-                    
-                    </div>
-                                          
-                        </div>
-                
+  {% block content %}
+  <div id="page-inner">
+                  <div class="row">
+                      <div class="col-md-12">
+                       <h2>Admin Access - Subway passenger data</h2>
+                       <h5>Welcome back, admin {{admin}}. How is it going?</h5>   
+                      </div>
+                  </div>              
+                   <!-- /. ROW  -->
+                    <hr />
+                  <div class="row">
+                  <div class="col-md-3 col-sm-6 col-xs-6">           
+        <div class="panel panel-back noti-box">
+                  <span class="icon-box bg-color-red set-icon">
+                      <i class="fa fa-envelope-o"></i>
+                  </span>
+                  <div class="text-box" >
+                      <p class="main-text">120 New</p>
+                      <p class="text-muted">Costumer Service Mail</p>
+                  </div>
+               </div>
            </div>
+                      <div class="col-md-3 col-sm-6 col-xs-6">           
+        <div class="panel panel-back noti-box">
+                  <span class="icon-box bg-color-green set-icon">
+                      <i class="fa fa-bars"></i>
+                  </span>
+                  <div class="text-box" >
+                      <p class="main-text">300 More</p>
+                      <p class="text-muted">Site views</p>
+                  </div>
+               </div>
+           </div>
+                      <div class="col-md-3 col-sm-6 col-xs-6">           
+        <div class="panel panel-back noti-box">
+                  <span class="icon-box bg-color-blue set-icon">
+                      <i class="fa fa-bell-o"></i>
+                  </span>
+                  <div class="text-box" >
+                      <p class="main-text">240 New</p>
+                      <p class="text-muted">Travelling this week</p>
+                  </div>
+               </div>
+           </div>
+                      <div class="col-md-3 col-sm-6 col-xs-6">           
+        <div class="panel panel-back noti-box">
+                  <span class="icon-box bg-color-brown set-icon">
+                      <i class="fa fa-rocket"></i>
+                  </span>
+                  <div class="text-box" >
+                      <p class="main-text">3% More</p>
+                      <p class="text-muted">Passengers</p>
+                  </div>
+               </div>
+           </div>
+        </div>
 
-                     
-    </div>
-             <!-- /. PAGE INNER  -->
+         <div class="row"> 
+                      
+                        
+          <div class="col-sm-12">
+              <div class="panel panel-default">
+                          <div class="panel-heading">
+                              Last month traffic
+                          </div>
+                          <div class="panel-body">
+                              <div id="whenChart"></div>
 
-{% endblock %}
+                          </div>
+                      </div>   
 
-{% block addscripts%}
-    <script src="{% static 'hello/js/charts.js' %}" ></script>
-{% endblock %}
+          </div>
+          </div>
+
+                  <div class="row"> 
+                      
+                        
+                      <div class="col-md-6 col-sm-12 col-xs-12">                     
+                      <div class="panel panel-default">
+                          <div class="panel-heading">
+                              Age group
+                          </div>
+                          <div class="panel-body">
+                              <div id="ageChart"></div>
+
+                          </div>
+                      </div>            
+                  </div>
+                      <div class="col-md-6 col-sm-12 col-xs-12">           
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                              Gender
+                          </div>
+                          <div class="panel-body">
+                              <div id="genderChart"></div>
+
+                          </div>
+                      </div>                  
+                      
+                      </div>
+                                            
+                          </div>
+             </div>
+      </div>
+               <!-- /. PAGE INNER  -->
+
+  {% endblock %}
+
+  {% block addscripts%}
+      <script src="{% static 'hello/js/charts.js' %}" ></script>
+  {% endblock %}

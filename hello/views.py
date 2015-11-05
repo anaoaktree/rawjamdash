@@ -4,11 +4,11 @@ from django.http import HttpResponse
 import datetime,json, random
 from hello.models import SubUser
 
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
 
-u = User.objects.get(username='john')
-u.set_password('new password')
-u.save()
+#u = User.objects.get(username='john')
+#u.set_password('new password')
+#u.save()
 
 # gets the current date
 now = datetime.datetime.now()
@@ -34,7 +34,7 @@ def bigTable(request):
     return render(request, 'bigTable.html', {'todaytime': now, 'allUsers':SubUser.objects.all()})    
 
 
-
+# gets the values for the charts
 def getCounter(request):
 	male = SubUser.objects.filter(gender="M").count()
 	female = SubUser.objects.filter(gender="F").count()
@@ -45,11 +45,3 @@ def getCounter(request):
 #Gets the total nr of subway users
 def getCountAll(request):
 	return JsonResponse({"count":SubUser.objects.count()})
-
-# Gets the 
-def getCountM(request):
-	return JsonResponse({"count":SubUser.objects.filter(gender="M").count()})
-
-
-def getCountF(request):
-	return JsonResponse({"count":SubUser.objects.filter(gender="F").count()})
