@@ -17,9 +17,9 @@ def run():
 
 
 
-
-
 now = datetime.datetime.now()
+
+
 
 # Create your views here.
 def index(request):
