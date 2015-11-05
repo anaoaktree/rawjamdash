@@ -39,7 +39,7 @@ def index(request):
 # Loads the table pages
 def tables(request):
 	run()
-	return render(request, 'tables.html', {'todaytime': now, 'tabledata': SubUser.objects.filter(gender="M"),'lastweek': SubUser.objects.filter(when=1),'over60': SubUser.objects.filter(when=1)})
+	return render(request, 'tables.html', {'todaytime': now, 'tabledata': SubUser.objects.filter(gender="M"),'lastweek': SubUser.objects.filter(when=1),'over60': SubUser.objects.filter(age__gt=60)})
 
 
 #Gets assync data to fill in the big table
@@ -51,7 +51,8 @@ def bigTable(request):
 def getCounter(request):
 	male = SubUser.objects.filter(gender="M").count()
 	female = SubUser.objects.filter(gender="F").count()
-	return JsonResponse({"male":male, "female":female})
+	age0 = 'over60': SubUser.objects.filter(age__lt=10)
+	return JsonResponse({"male":male, "female":female, "age0":age0})
 
 
 #Gets the total nr of subway users

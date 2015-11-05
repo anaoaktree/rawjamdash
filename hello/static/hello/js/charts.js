@@ -1,13 +1,4 @@
-
- $(document).ready(function () {
-    var counter= {
-        male: 0,
-        female:0,
-        age1:0,
-        age2:0,
-        age3:0
-    };
-      var agechart = c3.generate({
+c3.generate({
         bindto: '#ageChart',
         data: {
         // iris data from R
@@ -53,6 +44,4 @@
         ],
         type : 'pie',
     }
-});
-
 });
