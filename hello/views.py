@@ -27,11 +27,11 @@ def authentication(request):
 	if user is not None:
 		if user.is_active:
 			login(request, user)
-            return redirect("index")
-        else:
-        	print "err" # Return a 'disabled account' error message
-    else:
-    	print "err"
+			return redirect("index")
+		else:
+			print "err" # Return a 'disabled account' error message
+	else:
+		print "err"
         # Return an 'invalid login' error message.
 
 # Fist dashboard page
