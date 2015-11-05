@@ -1,3 +1,5 @@
+
+  $(document).ready(function () {
 c3.generate({
         bindto: '#ageChart',
         data: {
@@ -52,3 +54,5 @@ c3.generate({
         type : 'pie',
     }
 });
+});
+    
