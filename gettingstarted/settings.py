@@ -93,7 +93,8 @@ USE_L10N = True
 USE_TZ = True
 
 #LOGIN URL
-settings.LOGIN_URL = "/login/"
+LOGIN_URL = "/login/"
+
 # Parse database configuration from $DATABASE_URL
 DATABASES['default'] =  dj_database_url.config()
 

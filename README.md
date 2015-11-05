@@ -15,8 +15,10 @@
 	- Dummy data with django-faker
 	- Ajax request for big amounts of data
 	- Generated Django models
+	- Order and search pre-default
 
 6. Charts
 	- JS library C3
 
-
+7. Auth
+ - django API

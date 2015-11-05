@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 import datetime,json, random
 from hello.models import SubUser
+
+from django.contrib.auth.models import User
 
 #user = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
 #user.save()
@@ -32,6 +34,7 @@ def authentication(request, creds):
 
 
 # Fist dashboard page
+@login_required
 def index(request):
 	#if True:
 #		return redirect("login")
