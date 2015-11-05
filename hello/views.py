@@ -3,33 +3,22 @@ from django.http import HttpResponse
 
 import datetime,json, random
 from hello.models import SubUser
-from faker import Factory
-
-
-fake= Factory.create()
-
-
-def run():
-	for _ in range(100):
-		p= fake.simple_profile()
-		SubUser(name = p["name"], gender= p["sex"], age = random.randint(0,99), when= random.randint(1,4)).save()
-
-
-
 
 now = datetime.datetime.now()
 
+def login(request):
+	return render(request, 'login.html')
 
 
 # Create your views here.
 def index(request):
-	Person.objects.all().delete()
+	if True:
+		return redirect("login")
 	return render(request, 'index.html', {'todaytime': now})
 
 
 # Loads the table pages
 def tables(request):
-	run()
 	return render(request, 'tables.html', {'todaytime': now, 'tabledata': SubUser.objects.filter(gender="M"),'lastweek': SubUser.objects.filter(when=1),'over60': SubUser.objects.filter(age__gt=60)})
 
 
