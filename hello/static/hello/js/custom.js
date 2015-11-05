@@ -33,6 +33,17 @@
                 }
             });
 
+            var pathname = window.location.pathname;
+
+            switch(pathname):
+                case '/':
+                    $('.menu-item').removeClass('active-menu');
+                    $('.menu-item-one').addClass('active-menu');
+                    break;
+                case '/tables/':
+                    $('.menu-item').removeClass('active-menu');
+                    $('.menu-item-two').addClass('active-menu');
+                    break;
         }
     }
 
