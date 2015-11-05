@@ -26,13 +26,10 @@ function loginAdmin(event){
      	'uname': document.getElementById("uname").value,
      	'passwd':document.getElementById("passwd").value
      };
-    xhr = createRequest();
+  xhr = createRequest();
 	xhr.open("POST", "/authentication", true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onreadystatechange = function() {
+  xhr.onreadystatechange = function() {
 	  	if (xhr.readyState == 4) {
-	  		var resp = JSON.parse(xhr.responseText);
-	  		if (resp.err=="true"){alert(resp.msg);}
 	  		}
 	}
 	xhr.send(nuser);
