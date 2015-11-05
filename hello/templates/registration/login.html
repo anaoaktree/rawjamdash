@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Subway Traffic Login Page</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+ 
+ {% load staticfiles %}
+  <!-- BOOTSTRAP STYLES-->
+    <link href="{% static 'hello/css/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'hello/css/login.css' %}" rel="stylesheet" />
+
+
+</head>
+<body>
+ <div class="container">
+
+<div class="col-sm-6 col-sm-offset-3">
+
+    <h1><span class="fa fa-sign-in"></span> Login</h1>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" id="uname">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" id="passwd">
+        </div>
+
+        <button type="submit" class="btn btn-warning btn-lg" id="loginBtn">Login</button>
+
+    <hr>
+
+    <p>Go back <a href="/">home</a></p>
+</div>
+
+</div>
+  <script src="{% static 'hello/js/jquery-1.10.2.js' %}"></script>
+  <script src="{% static 'hello/js/login.js' %}"></script>
+
+</body>
+</html>
