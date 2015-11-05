@@ -21,11 +21,9 @@ def login(request):
 
 def authentication(request):
 	if request.method == 'POST':
-		request.session.set_test_cookie()
 		login_form = AuthenticationForm(request, request.POST)
 		if login_form.is_valid():
-			if request.is_ajax:
-				user = django_login(request, login_form.get_user())
+			user = django_login(request, login_form.get_user())
 			if user is not None:
 				return redirect("index")
 			else:
