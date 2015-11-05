@@ -19,7 +19,7 @@ now = datetime.datetime.now()
 def login(request):
 	return render(request, 'login.html', {})
 
-def login(request):
+def authentication(request):
 	if request.method == 'POST':
 		request.session.set_test_cookie()
 		login_form = AuthenticationForm(request, request.POST)
