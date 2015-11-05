@@ -22,6 +22,7 @@ def login(request):
 def authentication(request):
 	if request.method == 'POST':
 		login_form = AuthenticationForm(request, request.POST)
+		print "LOGIN FORM "login_form
 		if login_form.is_valid():
 			user = django_login(request, login_form.get_user())
 			if user is not None:
