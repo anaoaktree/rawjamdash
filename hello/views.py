@@ -27,9 +27,9 @@ def authentication(request, creds):
 			redirect("index")
 		else:
 			print "The password is valid, but the account has been disabled!"
-		else:
+	else:
     # the authentication system was unable to verify the username and password
-    print "The username and password were incorrect." 
+    	print "The username and password were incorrect." 
 
 
 # Fist dashboard page
