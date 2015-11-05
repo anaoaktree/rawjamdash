@@ -16,8 +16,11 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-
-
+#top-bar{color: white;
+padding: 15px 50px 5px 50px;
+float: right;
+font-size: 16px;
+}
  #wrapper {
     width: 100%;
     background:#202020;
