@@ -17,6 +17,8 @@ now = datetime.datetime.now()
 def login(request):
 	return render(request, 'login.html', {})
 
+def authentication(request, creds):
+	pass
 
 # Fist dashboard page
 def index(request):
