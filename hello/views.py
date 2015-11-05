@@ -20,8 +20,8 @@ def login(request):
 
 # Fist dashboard page
 def index(request):
-	if True:
-		return redirect("login")
+	#if True:
+#		return redirect("login")
 	return render(request, 'index.html', {'todaytime': now})
 
 
