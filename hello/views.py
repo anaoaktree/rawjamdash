@@ -4,13 +4,20 @@ from django.http import HttpResponse
 import datetime,json, random
 from hello.models import SubUser
 
+from django.contrib.auth.models import User
+
+u = User.objects.get(username='john')
+u.set_password('new password')
+u.save()
+
+# gets the current date
 now = datetime.datetime.now()
 
 def login(request):
-	return render(request, 'login.html')
+	return render(request, 'login.html', {})
 
 
-# Create your views here.
+# Fist dashboard page
 def index(request):
 	if True:
 		return redirect("login")
