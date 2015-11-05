@@ -18,7 +18,21 @@ if (request == null)
 return request;
 };
 
-
+function getCookie(name) {
+             var cookieValue = null;
+             if (document.cookie && document.cookie != '') {
+                 var cookies = document.cookie.split(';');
+                 for (var i = 0; i < cookies.length; i++) {
+                     var cookie = cookies[i].trim();
+                     // Does this cookie string begin with the name we want?
+                 if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                     cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                     break;
+                 }
+             }
+         }
+         return cookieValue;
+         }
 function loginAdmin(event){
 	event.preventDefault();
      // jQuery AJAX call for JSON
@@ -26,8 +40,12 @@ function loginAdmin(event){
      	'uname': document.getElementById("uname").value,
      	'passwd':document.getElementById("passwd").value
      };
+
   xhr = createRequest();
+
 	xhr.open("POST", "/authentication/", true);
+  xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+  
   xhr.onreadystatechange = function() {
 	  	if (xhr.readyState == 4) {
 	  		}

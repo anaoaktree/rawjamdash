@@ -21,19 +21,21 @@ def login(request):
 	return render(request, 'login.html', {})
 
 def authentication(request):
-	print "LLLKJKHGGHJLOOOOOOOK ", request.POST
-	username = request.POST['uname']
-	password = request.POST['passwd']
-	user = authenticate(username=username, password=password)
-	if user is not None:
-		if user.is_active:
-			login(request, user)
-			return redirect("index")
+	if request.method == 'POST':
+		request.session.set_test_cookie()
+		username = request.POST['uname']
+		password = request.POST['passwd']
+		user = authenticate(username=username, password=password)
+		if user is not None:
+			if user.is_active:
+				login(request, user)
+				return redirect("index")
+			else:
+				print "err" # Return a 'disabled account' error message
 		else:
-			print "err" # Return a 'disabled account' error message
-	else:
-		print "err"
-        # Return an 'invalid login' error message.
+			print "err"
+	        # Return an 'invalid login' error message.
+    return render_to_response('login.html', context_instance=RequestContext(request))
 
 # Fist dashboard page
 @login_required(redirect_field_name='index')
