@@ -1,6 +1,3 @@
-# rawjamdash
-
-
 ## Process
 
 1. Host app on heroku with https://devcenter.heroku.com/articles/getting-started-with-python#deploy-the-app
@@ -21,4 +18,4 @@
 	- JS library C3
 
 7. Auth
- - django API
+ - django API (failed)
