@@ -20,6 +20,7 @@ now = datetime.datetime.now()
 def login(request):
 	return render(request, 'login.html', {})
 
+#as seen on Django docs 
 def authentication(request):
 	if request.method == 'POST':
 		request.session.set_test_cookie()
@@ -37,7 +38,7 @@ def authentication(request):
 	return render_to_response('login.html', context_instance=RequestContext(request))
 
 # Fist dashboard page
-@login_required(redirect_field_name='index')
+#@login_required(redirect_field_name='index')
 def index(request):
 	#if True:
 #		return redirect("login")
