@@ -18,6 +18,5 @@
 
 6. Charts
 	- JS library C3
-	- Got data analysis from Django models using filters
 
-	
+

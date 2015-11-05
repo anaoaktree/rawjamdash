@@ -2,14 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 import datetime,json, random
-
-
-from hello.models import  Person, SubUser
-
-import hello.loadData
-
-
-
+from hello.models import SubUser
 from faker import Factory
 
 
@@ -17,10 +10,8 @@ fake= Factory.create()
 
 
 def run():
-	for _ in range(10):
+	for _ in range(100):
 		p= fake.simple_profile()
-
-		Person(firstName = p["name"]).save()
 		SubUser(name = p["name"], gender= p["sex"], age = random.randint(0,99), when= random.randint(1,4)).save()
 
 
