@@ -27,9 +27,10 @@ def login(request):
 			if request.is_ajax:
 				user = django_login(request, login_form.get_user())
 			if user is not None:
-				return redirect("index")                                                                                                   
-           else:
-           		return HttpResponseForbidden() # catch invalid ajax and all non ajax**
+				return redirect("index")
+			else:
+				return HttpResponseForbidden() # catch invalid ajax and all non ajax**
+
 # Fist dashboard page
 @login_required(redirect_field_name='index')
 def index(request):
