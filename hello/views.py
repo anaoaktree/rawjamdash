@@ -32,7 +32,7 @@ def authentication(request, creds):
 
 
 # Fist dashboard page
-@login_required
+@login_required(redirect_field_name='index')
 def index(request):
 	#if True:
 #		return redirect("login")
