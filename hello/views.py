@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
 
 import datetime,json, random
 from hello.models import SubUser
@@ -20,16 +21,20 @@ def login(request):
 	return render(request, 'login.html', {})
 
 def authentication(request):
-	if request.method == 'POST':
-		login_form = AuthenticationForm(request, request.POST)
-		print "LOGIN FORM ", login_form
-		if login_form.is_valid():
-			user = django_login(request, login_form.get_user())
-			if user is not None:
-				return redirect("index")
-			else:
-				return HttpResponseForbidden() # catch invalid ajax and all non ajax**
-
+	username = request.POST['uname']
+    password = request.POST['passwd']
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        if user.is_active:
+            login(request, user)
+            # Redirect to a success page.
+        else:
+        	print "err"
+            # Return a 'disabled account' error message
+    else:
+    	print "err"
+        # Return an 'invalid login' error message.
+        
 # Fist dashboard page
 @login_required(redirect_field_name='index')
 def index(request):
