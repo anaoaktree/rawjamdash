@@ -33,9 +33,8 @@ def authentication(request):
 			else:
 				print "err" # Return a 'disabled account' error message
 		else:
-			print "err"
-	        # Return an 'invalid login' error message.
-    return render_to_response('login.html', context_instance=RequestContext(request))
+			print "err" # Return an 'invalid login' error message.
+	return render_to_response('login.html', context_instance=RequestContext(request))
 
 # Fist dashboard page
 @login_required(redirect_field_name='index')
