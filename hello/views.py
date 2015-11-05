@@ -19,17 +19,25 @@ now = datetime.datetime.now()
 def login(request):
 	return render(request, 'login.html', {})
 
-def authentication(request, creds):
-	user = authenticate(username='john', password='johnpassword')
-	if user is not None:
-		if user.is_active: # the password verified for the user
-			print "User is valid, active and authenticated" 
-			redirect("index")
-		else:
-			print "The password is valid, but the account has been disabled!"
-	else: # the authentication system was unable to verify the username and password
-		print "The username and password were incorrect." 
-
+def login(request):                                                                                                                         
+52     if request.method == 'POST':                                                                                                            
+53         request.session.set_test_cookie()                                                                                                   
+54         login_form = AuthenticationForm(request, request.POST)                                                                              
+55         if login_form.is_valid():                                                                                                           
+56             if request.is_ajax:                                                                                                             
+57                 user = django_login(request, login_form.get_user())                                                                         
+58                 if user is not None:                                                                                                        
+           else:                                                                                                                               
+61                return HttpResponseForbidden() # catch invalid ajax and all non ajax**                                        
+60     else:                                                                                                                                   
+61         login_form = AuthenticationForm(request)                                                                                            
+62                                                                                                                                             
+63     c = Context({                                                                                                                           
+64         'next': request.REQUEST.get('next'),                                                                                                
+65         'login_form': login_form,                                                                                                           
+66         'request':request,                                                                                                                  
+67     })                                                                                                                                      
+68     return render_to_response('login.html', c, context_instance=RequestContext(request))
 
 # Fist dashboard page
 @login_required(redirect_field_name='index')

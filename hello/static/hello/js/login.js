@@ -27,7 +27,7 @@ function loginAdmin(event){
      	'passwd':document.getElementById("passwd").value
      };
     xhr = createRequest();
-	xhr.open("PUT", "/authentication", true);
+	xhr.open("POST", "/authentication", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = function() {
 	  	if (xhr.readyState == 4) {
