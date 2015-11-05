@@ -34,7 +34,6 @@ function populateTable(){
 }
 
 
-
   $(document).ready(function () {
       $('#ageTable').dataTable();
       $('#timeTable').dataTable();
