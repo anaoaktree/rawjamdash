@@ -51,7 +51,7 @@ def bigTable(request):
 def getCounter(request):
 	male = SubUser.objects.filter(gender="M").count()
 	female = SubUser.objects.filter(gender="F").count()
-	age0 = 'over60': SubUser.objects.filter(age__lt=10)
+	age0 = SubUser.objects.filter(age__lt=10)
 	return JsonResponse({"male":male, "female":female, "age0":age0})
 
 
