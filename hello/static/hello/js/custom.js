@@ -33,18 +33,6 @@
                 }
             });
 
-            /**
-             * Menu items.
-             */
-            var href = window.location.href;
-
-            $('.menu-item').each(function(index, item) {
-
-                if(href.indexOf($(item).prop('href')) != -1) {
-                    $(item).addClass('active-menu');
-                }
-            });
-
         }
     }
 
