@@ -35,7 +35,7 @@ function loginAdmin(event){
 	  		if (resp.err=="true"){alert(resp.msg);}
 	  		}
 	}
-	xhr.send(JSON.stringify(nuser));
+	xhr.send(nuser);
 
 }
 
