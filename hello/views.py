@@ -18,7 +18,18 @@ def login(request):
 	return render(request, 'login.html', {})
 
 def authentication(request, creds):
-	pass
+	user = authenticate(username='john', password='johnpassword')
+	if user is not None:
+    # the password verified for the user
+    	if user.is_active:
+    		print "User is valid, active and authenticated" 
+    		redirect(index)
+    	else:
+    		print "The password is valid, but the account has been disabled!"
+    	else:
+    # the authentication system was unable to verify the username and password
+    print "The username and password were incorrect." 
+
 
 # Fist dashboard page
 def index(request):
